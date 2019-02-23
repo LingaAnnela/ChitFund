@@ -10,7 +10,6 @@ export class Transaction {
     public duration?: string;
     public attachments?: string;
     public payments: any[];
-    // public status?: 'completed' | 'cancelled' | null ;
   
     constructor(id: string,
                 name: string,

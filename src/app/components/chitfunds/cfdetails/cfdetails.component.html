@@ -1,10 +1,11 @@
-<section>
-    <div class="client-profile">
-      <mat-card fxLayout='row'>
-        <span fxFlex='40'>
-          <img src="../../../../assets/dp.jpg" alt="LA" class="client-detail__img">
+<section class="cfg-details">
+  <div class="cfg-details__head">
+    <div class="cfg-details__head__group">
+      <mat-card>
+        <span>
+          <!-- <img src="../../../../assets/dp.jpg" alt="LA" class="client-detail__img"> -->
         </span>
-        <mat-tab-group fxFlex='60'>
+        <mat-tab-group>
           <mat-tab label="Profile">
             <mat-card>
               <mat-card-header>
@@ -30,39 +31,59 @@
           </mat-tab>
         </mat-tab-group>
       </mat-card>
+
     </div>
-  </section>
-  
-  <section>
-    <div class="transaction-list" *ngFor="let transaction of transactions">
+    <div class="cfg-details__head__details">
       <mat-accordion>
-        <mat-expansion-panel class="transaction-list-pannel">
-          <mat-expansion-panel-header  style="padding-top: 10px">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header style="padding-top: 10px">
             <mat-panel-title>
-              <div fxFlex="20%" class="transaction-list__header-one">
-                  <span class="mat-small mat-caption">Last Updated</span>
-                  <br>
-                  <span [ngStyle]="{ color: 'blue'}"> {{ transaction.date | date : 'dd MMM, yyyy'}}</span>
+              <div>
+                <span>Last Updated</span>
+                <br>
+                <span [ngStyle]="{ color: 'blue'}"> Feb 20, 2019 </span>
               </div>
-              <span fxFlex="30%" class="transaction-list__header-two">
+              <span>
                 Details
               </span>
-              <span fxFlex="30%" class="transaction-list__header-three" [ngClass]="{positive: transaction.amount >= 0, negative: transaction.amount < 0 }">
+              <span>
                 {{ 100000 | currency:"INR" }}
               </span>
-              <span fxFlex="20%" class="transaction-list__header-four" [ngClass]="{positive: transaction.interestEarned >= 0, negative: transaction.interestEarned < 0 }">
+              <span>
                 {{ 24000 | currency:"INR"}}
               </span>
             </mat-panel-title>
-  
+
           </mat-expansion-panel-header>
-  
-          <p>
-            {{ transaction.interestEarned }} {{ transaction.amount }} {{ transaction.interest }}
-          </p>
-  
+
         </mat-expansion-panel>
       </mat-accordion>
     </div>
-  </section>
-  
+  </div>
+
+  <div class="cfg-details__clients">
+          <mat-card >
+              <mat-card-header class="client-list-main">
+                  <mat-card-title class="client-list-main__title">Participants</mat-card-title>
+                  <button mat-icon-button class="client-list-main__icon">
+                      <mat-icon >how_to_reg</mat-icon>
+                    </button>
+              </mat-card-header>
+              <mat-card-content>
+                  <div *ngFor="let client of clients" class="client-list">
+                      <mat-card routerLink="/client-details" class="client-list__header" >
+                        <span class="client-list__id-sec--start">
+                          {{ client.id }}
+                        </span>
+                        <span class="client-list__id-sec--center">
+                          {{ client.firstName }} {{ client.lastName }}
+                        </span>  
+                        <span >
+                            abcdfvsfdsfd
+                          </span>                     
+                      </mat-card>
+                    </div>
+                </mat-card-content>
+          </mat-card>
+  </div>
+</section>

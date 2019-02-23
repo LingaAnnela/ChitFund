@@ -1,48 +1,47 @@
 @import '../../../../scss/vars';
 
-.client-profile {
-    padding-top: 10px;
-}
-.client-detail__img {
-    height: 175px;
-    width: 175px;
-    border-radius: 50%;
+
+.cfg-details {
+  display : flex;
+  justify-content : center;
+  align-content : space-between;
+
+  &__head {
+    flex: 1 60%;
+  }
+
+  &__clients {
+    flex: 1 40%;
+  }
+
 }
 
-.transaction-list {
-  padding-top: 5px;
-    
-  &__header-one {
+.client-list {
+  display: flex;
+  padding: 0px;
+  margin: 5px;
+  cursor: pointer;
+
+  &__id-sec--start{
     justify-content: space-around;
     align-items: center;
     border-right-style: dashed;
     border-right-color: rgb(136, 129, 127);
-    border-right-width: 1px;
-  }
-
-  &__header-two {
+    border-right-width: 1px;    
+  }  
+  
+  &__id-sec--center{
     justify-content: start;
-    align-items: center;
+    align-items: flex-end;
     padding-left: 15px;
   }
 
-  &__header-three {
-    justify-content: start;
-    align-items: center;
-    padding-left: 15px;
-  }
-
-  &__header-four {
-    justify-content: start;
-    align-items: center;
-    padding-left: 15px;
-  }
-
-  &:hover {
-    .transaction-list-pannel{
+  
+  &:hover{
+    .client-list__header {
       border-left-style: solid;
       border-left-color: $red_color;
-      border-left-width: 5px;
+      border-left-width: 5px;   
     }
   }
 
